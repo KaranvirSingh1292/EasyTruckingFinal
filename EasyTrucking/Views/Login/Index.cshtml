@@ -1,0 +1,95 @@
+﻿@model EasyTrucking.Models.LoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<!--================ Home Banner Area =================-->
+<section class="home_banner_area">
+    <div class="banner_inner d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="banner_content d-flex flex-md-row flex-column"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================ End Home Banner Area =================-->
+<section class="feature-area mt-5">
+    <div class="container">
+        @if (TempData.ContainsKey("error"))
+        {
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="alert alert-danger">
+                        <strong>Error!</strong> @TempData["error"]
+                    </div>
+                </div>
+            </div>
+        }
+        @if (TempData.ContainsKey("success"))
+        {
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="alert alert-success">
+                        <strong>Success!</strong> @TempData["success"]
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-8 text-center section-title-wrap">
+                <h2>Login</h2>
+                <hr />
+
+                <form asp-action="Login">
+                    <div class="row">
+                        <div class="col-md-12 text-left mt-4">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group row">
+                                <label asp-for="Username" class="col-sm-3 control-label"></label>
+                                <input asp-for="Username" class="col-sm-9 form-control" />
+                                <span asp-validation-for="Username" class="col-sm-9 offset-sm-3 text-danger"></span>
+                            </div>
+                            <div class="form-group row">
+                                <label asp-for="Password" class="col-sm-3 control-label"></label>
+                                <input asp-for="Password" class="col-sm-9 form-control" />
+                                <span asp-validation-for="Password" class="col-sm-9 offset-sm-3 text-danger"></span>
+                            </div>
+                            <div class="form-group row">
+                                <input type="submit" value="Login" class="offset-sm-3 btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--================ Start CTA Area ================-->
+<section class="cta_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="cta_inner d-flex flex-md-row flex-column justify-content-between align-items-center">
+                    <div class="mb-md-0 mb-4 text-sm-left text-center">
+                        <p>Get a quick response from our team</p>
+                        <h1>Please feel free to reach us</h1>
+                    </div>
+                    <div class="">
+                        <a href="#" class="main_btn">Explore More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================ End CTA Area ================-->
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

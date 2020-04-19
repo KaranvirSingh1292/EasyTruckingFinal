@@ -1,0 +1,26 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+    <div class="col-md-3">
+        <button class="btn btn-block btn-danger p-2" data-toggle="collapse" data-target="#demo">
+            <i class="fa fa-bars"></i> &nbsp;&nbsp;Menu
+        </button>
+        <div id="demo" class="collapse show">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a asp-action="Index">Available Loads</a>
+                </li>
+                <li class="list-group-item">
+                    <a asp-action="MyLoads">My Loads</a>
+                </li>
+                <li class="list-group-item">
+                    <a asp-action="Payouts">Payouts</a>
+                </li>
+                <li class="list-group-item">
+                    <a asp-controller="Login" asp-action="Logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>

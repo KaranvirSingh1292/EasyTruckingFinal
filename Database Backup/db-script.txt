@@ -1,0 +1,22 @@
+CREATE TABLE [dbo].[Users] (
+    [Id]       INT            IDENTITY (1, 1) NOT NULL,
+    [Username] NVARCHAR (MAX) NOT NULL,
+    [Password] NVARCHAR (MAX) NOT NULL,
+    [Role]     NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+CREATE TABLE [dbo].[Loads] (
+    [Id]              INT            IDENTITY (1, 1) NOT NULL,
+    [Items]           NVARCHAR (MAX) NOT NULL,
+    [Pickup_Location] NVARCHAR (MAX) NOT NULL,
+    [Drop_Location]   NVARCHAR (MAX) NOT NULL,
+    [Pay]             MONEY          NOT NULL,
+    [Dispatcher_Id]   INT            NOT NULL,
+    [Driver_Id]       INT            NULL,
+    [Created_On]      DATE           NULL,
+    [Accepted_On]     DATE           NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
